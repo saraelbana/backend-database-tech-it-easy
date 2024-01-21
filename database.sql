@@ -40,3 +40,39 @@ CREATE TABLE WallBracket (
     adjustable BOOLEAN,
     product_id INT PRIMARY KEY
 );
+-- Relationships
+-- Product-Television relationship (0..1 to 0..*)
+CREATE TABLE ProductTelevisionRelationship (
+    product_id INT,
+    television_id INT,
+    PRIMARY KEY (product_id, television_id)
+);
+
+-- Product-RemoteController relationship (0..1 to 0..*)
+CREATE TABLE ProductRemoteControllerRelationship (
+    product_id INT,
+    remotecontroller_id INT,
+    PRIMARY KEY (product_id, remotecontroller_id)
+);
+
+-- Product-Customer relationship (0..1 to 0..*)
+CREATE TABLE ProductCustomerRelationship (
+    product_id INT,
+    customer_id VARCHAR(255),
+    PRIMARY KEY (product_id, customer_id)
+);
+
+-- Product-CIModule relationship (0..1 to 0..*)
+CREATE TABLE ProductCIModuleRelationship (
+    product_id INT,
+    cimodule_id INT,
+    PRIMARY KEY (product_id, cimodule_id)
+);
+
+-- Product-WallBracket relationship (0..1 to 0..*)
+CREATE TABLE ProductWallBracketRelationship (
+    product_id INT,
+    wallbracket_id INT,
+    PRIMARY KEY (product_id, wallbracket_id)
+);
+
