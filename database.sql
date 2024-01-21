@@ -76,3 +76,51 @@ CREATE TABLE ProductWallBracketRelationship (
     PRIMARY KEY (product_id, wallbracket_id)
 );
 
+-- Foreign Key Constraints
+ALTER TABLE Television
+ADD CONSTRAINT fk_television_product
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE RemoteController
+ADD CONSTRAINT fk_remotecontroller_product
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductTelevisionRelationship
+ADD CONSTRAINT fk_product_television
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductTelevisionRelationship
+ADD CONSTRAINT fk_television_productrelationship
+FOREIGN KEY (television_id) REFERENCES Television(product_id);
+
+ALTER TABLE ProductRemoteControllerRelationship
+ADD CONSTRAINT fk_product_remotecontroller
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductRemoteControllerRelationship
+ADD CONSTRAINT fk_remotecontroller_productrelationship
+FOREIGN KEY (remotecontroller_id) REFERENCES RemoteController(product_id);
+
+ALTER TABLE ProductCustomerRelationship
+ADD CONSTRAINT fk_product_customer
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductCustomerRelationship
+ADD CONSTRAINT fk_customer_productrelationship
+FOREIGN KEY (customer_id) REFERENCES Customer(username);
+
+ALTER TABLE ProductCIModuleRelationship
+ADD CONSTRAINT fk_product_cimodule
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductCIModuleRelationship
+ADD CONSTRAINT fk_cimodule_productrelationship
+FOREIGN KEY (cimodule_id) REFERENCES CIModule(product_id);
+
+ALTER TABLE ProductWallBracketRelationship
+ADD CONSTRAINT fk_product_wallbracket
+FOREIGN KEY (product_id) REFERENCES Product(id);
+
+ALTER TABLE ProductWallBracketRelationship
+ADD CONSTRAINT fk_wallbracket_productrelationship
+FOREIGN KEY (wallbracket_id) REFERENCES WallBracket(product_id);
