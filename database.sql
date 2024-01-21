@@ -14,16 +14,14 @@ CREATE TABLE Television (
     available DOUBLE,
     refreshRate DOUBLE,
     screenType VARCHAR(255),
-    product_id INT PRIMARY KEY,
-    FOREIGN KEY (product_id) REFERENCES Product(id)
+    product_id INT PRIMARY KEY
 );
 
 -- RemoteController table
 CREATE TABLE RemoteController (
     compatibleWith VARCHAR(255),
     batteryType VARCHAR(255),
-    product_id INT PRIMARY KEY,
-    FOREIGN KEY (product_id) REFERENCES Product(id)
+    product_id INT PRIMARY KEY
 );
 
 -- Customer table
@@ -34,13 +32,11 @@ CREATE TABLE Customer (
 
 -- CIModule table
 CREATE TABLE CIModule (
-    product_id INT PRIMARY KEY,
-    FOREIGN KEY (product_id) REFERENCES Product(id)
+    product_id INT PRIMARY KEY
 );
 
 -- WallBracket table
 CREATE TABLE WallBracket (
     adjustable BOOLEAN,
-    product_id INT PRIMARY KEY,
-    FOREIGN KEY (product_id) REFERENCES Product(id)
+    product_id INT PRIMARY KEY
 );
